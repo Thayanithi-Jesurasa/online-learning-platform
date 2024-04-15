@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In / Sign Up</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #90d7d7;
+  }
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+  }
+  .active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Sign In / Sign Up</h1>
+  <div class="tabs">
+    <div class="tab active" onclick="showSignIn()">Sign In</div>
+    <div class="tab" onclick="showSignUp()">Sign Up</div>
+  </div>
+  <div id="signInForm">
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <input type="submit" value="Sign In">
+    </form>
+  </div>
+  <div id="signUpForm" style="display: none;">
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="newUsername">Username:</label>
+        <input type="text" id="newUsername" name="newUsername" required>
+      </div>
+      <div class="form-group">
+        <label for="newPassword">Password:</label>
+        <input type="password" id="newPassword" name="newPassword" required>
+      </div>
+      <input type="submit" value="Sign Up">
+    </form>
+  </div>
+</div>
+
+<script>
+  function showSignIn() {
+    document.getElementById("signInForm").style.display = "block";
+    document.getElementById("signUpForm").style.display = "none";
+    document.querySelector(".tab.active").classList.remove("active");
+    document.querySelectorAll(".tab")[0].classList.add("active");
+  }
+
+  function showSignUp() {
+    document.getElementById("signInForm").style.display = "none";
+    document.getElementById("signUpForm").style.display = "block";
+    document.querySelector(".tab.active").classList.remove("active");
+    document.querySelectorAll(".tab")[1].classList.add("active");
+  }
+</script>
+
+</body>
+</html>
